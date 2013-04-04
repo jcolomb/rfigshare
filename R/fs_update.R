@@ -8,15 +8,17 @@
 #' @param type one of: dataset, figure, media, poster, or paper (replaces original designation)
 #' @param session (optional) the authentication credentials from \code{\link{fs_auth}}. 
 #' @return output of PUT request (invisibly)
-#' @seealso \code{\link{fs_auth}}
+#' @seealso \code{\link{fs_auth}}, \code{\link{fs_add_tags}}
 #' @references \url{http://api.figshare.com}
+#' @details Updates the title, description, and type of an article.  
 #' @import RJSONIO
 #' @export
 #' @examples \dontrun{
 #' fs_update(138, title="New title") 
 #' }
 fs_update <- 
-function(article_id, title=NA, description=NA, type = NA, mine=T,
+
+function(article_id, title=NA, description=NA, type = NA, mine=TRUE,
          session = fs_get_auth()){
 
   ## grab the article details and use those as defaults

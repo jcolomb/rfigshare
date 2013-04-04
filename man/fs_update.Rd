@@ -3,7 +3,7 @@
 \title{Update article title, description, or type}
 \usage{
   fs_update(article_id, title = NA, description = NA,
-    type = NA, session = fs_get_auth())
+    type = NA, mine = TRUE, session = fs_get_auth())
 }
 \arguments{
   \item{article_id}{the id number of the article}
@@ -26,6 +26,9 @@
   Updates the article title, description or type. If any is
   not specified, it will remain unchanged.
 }
+\details{
+  Updates the title, description, and type of an article.
+}
 \examples{
 \dontrun{
 fs_update(138, title="New title")
@@ -38,6 +41,6 @@ fs_update(138, title="New title")
   \url{http://api.figshare.com}
 }
 \seealso{
-  \code{\link{fs_auth}}
+  \code{\link{fs_auth}}, \code{\link{fs_add_tags}}
 }
 
